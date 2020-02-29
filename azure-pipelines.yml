@@ -1,4 +1,10 @@
 # Starter pipeline
+- task: KubernetesManifest@0
+  inputs:
+    action: 'deploy'
+    kubernetesServiceConnection: 'b2c-active-akscluster-martin-aks3-sock-shop-1582976644124'
+    namespace: 'sock-shop'
+    manifests: 'apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2 kind: Deployment metadata:   name: nginx-deployment spec:   selector:     matchLabels:       app: nginx   replicas: 2 # tells deployment to run 2 pods matching the template   template:     metadata:       labels:         app: nginx     spec:       containers:       - name: nginx         image: nginx:1.7.9         ports:         - containerPort: 80'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
