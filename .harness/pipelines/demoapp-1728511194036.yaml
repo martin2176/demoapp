@@ -1,0 +1,35 @@
+pipeline:
+  identifier: Build_martin2176_demoapp_1728511203758
+  name: Build demoapp
+  orgIdentifier: tif
+  projectIdentifier: demonstration
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1728511188032
+        repoName: martin2176/demoapp
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          caching:
+            enabled: true
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
