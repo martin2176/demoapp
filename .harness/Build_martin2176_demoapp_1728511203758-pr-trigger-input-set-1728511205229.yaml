@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_martin2176_demoapp_1728511203758-pr-trigger-input-set
+  identifier: Build_martin2176_demoapp_1728511203758prtriggerinputset
+  orgIdentifier: tif
+  projectIdentifier: demonstration
+  pipeline:
+    identifier: Build_martin2176_demoapp_1728511203758
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
